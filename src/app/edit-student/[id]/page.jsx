@@ -17,20 +17,27 @@ export default function EditStudentPage() {
   const { id } = params;
 
   useEffect(() => {
-    if (id) {
-      fetchStudent();
+    if (!id) {
+      return;
     }
-  }, [id]);
 
-  const fetchStudent = async () => {
-    try {
-      const res = await API.get(`/students/${id}`);
-      setForm(res.data);
-    } catch (error) {
-      console.log(error);
-      alert("Failed to load student");
-    }
-  };
+    let isMounted = true;
+
+    API.get(`/students/${id}`)
+      .then((res) => {
+        if (isMounted) {
+          setForm(res.data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Failed to load student");
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [id]);
 
   const handleChange = (e) => {
     setForm({
@@ -70,7 +77,8 @@ export default function EditStudentPage() {
           value={form.name}
           onChange={handleChange}
         />
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="email"
@@ -79,7 +87,8 @@ export default function EditStudentPage() {
           value={form.email}
           onChange={handleChange}
         />
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="text"
@@ -88,7 +97,8 @@ export default function EditStudentPage() {
           value={form.course}
           onChange={handleChange}
         />
-        <br /><br />
+        <br />
+        <br />
 
         <button type="submit">Update Student</button>
       </form>
