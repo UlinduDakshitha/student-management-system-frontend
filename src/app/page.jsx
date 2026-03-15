@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div style={{ padding: "20px", display: "flex", height: "80vh", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <h1>Student Management System</h1>
-      <p>Welcome to the Student Management System</p>
+      <p>Welcome to the Studentsystem</p>
 
       <Link href="/login">
         <button>Login</button>
