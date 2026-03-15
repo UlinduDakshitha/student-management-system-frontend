@@ -2,15 +2,15 @@
 
 export default function Home() {
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", display: "flex", height: "80vh", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <h1>Student Management System</h1>
-      <p>Welcome to the system</p>
+      <p>Welcome to the Student Management System</p>
 
       <Link href="/login">
         <button>Login</button>
       </Link>
 
-      <br /><br />
+      <br /> <br />
 
       <Link href="/register">
         <button>Register</button>
