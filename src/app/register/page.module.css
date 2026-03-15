@@ -1,0 +1,235 @@
+.page {
+  --bg: #f3eadc;
+  --surface: rgba(255, 250, 244, 0.84);
+  --surface-strong: #fffaf4;
+  --line: rgba(88, 56, 31, 0.12);
+  --text: #201814;
+  --muted: #685b52;
+  --accent: #bb5a36;
+  --accent-strong: #8b3418;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 32px 20px;
+  background:
+    radial-gradient(
+      circle at left top,
+      rgba(244, 203, 164, 0.5),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at right bottom,
+      rgba(187, 90, 54, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #f8f2ea 0%, var(--bg) 54%, #efe1d0 100%);
+  color: var(--text);
+}
+
+.orbOne,
+.orbTwo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.orbOne {
+  top: 80px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: rgba(187, 90, 54, 0.14);
+}
+
+.orbTwo {
+  left: -80px;
+  bottom: 100px;
+  width: 260px;
+  height: 260px;
+  background: rgba(248, 204, 128, 0.2);
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.intro,
+.formCard,
+.highlightCard {
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 50px rgba(80, 46, 16, 0.08);
+}
+
+.intro {
+  border-radius: 30px;
+  padding: 42px;
+  background: var(--surface);
+}
+
+.kicker,
+.formEyebrow {
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--accent-strong);
+}
+
+.title {
+  margin: 0;
+  max-width: 11ch;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.description {
+  margin: 22px 0 0;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.highlightCard {
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(255, 251, 246, 0.7);
+}
+
+.highlightCard strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.highlightCard span {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 32px;
+  background: rgba(255, 251, 246, 0.92);
+}
+
+.formHeader h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.formHeader p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(88, 56, 31, 0.14);
+  border-radius: 16px;
+  background: var(--surface-strong);
+  padding: 14px 16px;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.input:focus {
+  border-color: rgba(187, 90, 54, 0.5);
+  box-shadow: 0 0 0 4px rgba(187, 90, 54, 0.12);
+  transform: translateY(-1px);
+}
+
+.submitButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, var(--accent) 0%, #d37a4c 100%);
+  color: #fff8f3;
+  font-weight: 700;
+  box-shadow: 0 16px 28px rgba(187, 90, 54, 0.24);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 34px rgba(187, 90, 54, 0.28);
+}
+
+.footerText {
+  margin: 22px 0 0;
+  color: var(--muted);
+}
+
+.footerText a {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 920px) {
+  .shell,
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .intro,
+  .formCard {
+    padding: 24px;
+  }
+
+  .title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 18px 14px 36px;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}
