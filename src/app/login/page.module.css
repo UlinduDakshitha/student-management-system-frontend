@@ -1,0 +1,245 @@
+.page {
+  --bg: #efe6d7;
+  --surface: rgba(255, 251, 245, 0.86);
+  --surface-strong: #fffaf3;
+  --line: rgba(61, 47, 35, 0.12);
+  --text: #1f1813;
+  --muted: #6b5b50;
+  --accent: #1e5a4c;
+  --accent-soft: #dcefe8;
+  --accent-strong: #143f36;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 28px 20px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(113, 176, 154, 0.28),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at left bottom,
+      rgba(234, 187, 120, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #f7f1e8 0%, var(--bg) 50%, #eadcc8 100%);
+  color: var(--text);
+}
+
+.blurA,
+.blurB {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.blurA {
+  top: 60px;
+  left: -70px;
+  width: 220px;
+  height: 220px;
+  background: rgba(30, 90, 76, 0.12);
+}
+
+.blurB {
+  right: -60px;
+  bottom: 90px;
+  width: 250px;
+  height: 250px;
+  background: rgba(234, 187, 120, 0.18);
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.formCard,
+.infoPanel,
+.metricCard {
+  border: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 52px rgba(55, 37, 19, 0.08);
+}
+
+.formCard {
+  padding: 34px;
+  border-radius: 32px;
+  background: rgba(255, 252, 247, 0.92);
+}
+
+.kicker,
+.panelTag {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--accent-strong);
+}
+
+.formHeader h1,
+.infoTop h2 {
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.formHeader h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+}
+
+.formHeader p:last-child,
+.panelText {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(61, 47, 35, 0.14);
+  border-radius: 16px;
+  background: var(--surface-strong);
+  padding: 14px 16px;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.input:focus {
+  border-color: rgba(30, 90, 76, 0.45);
+  box-shadow: 0 0 0 4px rgba(30, 90, 76, 0.12);
+  transform: translateY(-1px);
+}
+
+.submitButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, var(--accent) 0%, #2b7c68 100%);
+  color: #f9fcfb;
+  font-weight: 700;
+  box-shadow: 0 16px 30px rgba(30, 90, 76, 0.22);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(30, 90, 76, 0.28);
+}
+
+.footerText {
+  margin: 22px 0 0;
+  color: var(--muted);
+}
+
+.footerText a {
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.infoPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 32px;
+  padding: 34px;
+  background: linear-gradient(
+    180deg,
+    rgba(219, 238, 230, 0.9) 0%,
+    rgba(255, 249, 240, 0.82) 100%
+  );
+}
+
+.infoTop h2 {
+  max-width: 11ch;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.metricCard {
+  display: grid;
+  gap: 8px;
+  padding: 22px;
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.metricCard strong {
+  font-size: 1rem;
+}
+
+.metricCard span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.metricWide {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 251, 245, 0.96) 0%,
+    var(--accent-soft) 100%
+  );
+}
+
+@media (max-width: 920px) {
+  .shell,
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard,
+  .infoPanel {
+    padding: 24px;
+  }
+
+  .infoTop h2 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 16px 14px 36px;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}
