@@ -103,7 +103,8 @@ export default function RegisterPage() {
               Create Account
             </button>
           </form>
-
+ 
+ 
           <p className={styles.footerText}>
             Already registered? <Link href="/login">Go to login</Link>
           </p>
