@@ -104,7 +104,6 @@ export default function RegisterPage() {
             </button>
           </form>
  
- 
           <p className={styles.footerText}>
             Already registered? <Link href="/login">Go to login</Link>
           </p>
