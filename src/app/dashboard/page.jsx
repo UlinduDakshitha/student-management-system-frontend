@@ -6,6 +6,7 @@ import API from "../../services/api";
 import Navbar from "../../components/Navbar";
 import styles from "./page.module.css";
 
+
 export default function DashboardPage() {
   const [students, setStudents] = useState([]);
   const [form, setForm] = useState({
