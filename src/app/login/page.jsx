@@ -35,7 +35,6 @@ export default function LoginPage() {
       console.log(error);
     }
   };
-
   
   return (
     <main className={styles.page}>
