@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import API from "../../services/api";
 import styles from "./page.module.css";
 
-
 export default function LoginPage() {
   const [form, setForm] = useState({
     username: "",
