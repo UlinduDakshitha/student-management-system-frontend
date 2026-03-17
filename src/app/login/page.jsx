@@ -35,11 +35,12 @@ export default function LoginPage() {
       console.log(error);
     }
   };
-  
+
   return (
     <main className={styles.page}>
       <div className={styles.blurA} />
       <div className={styles.blurB} />
+
 
       <section className={styles.shell}>
         <div className={styles.formCard}>
