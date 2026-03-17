@@ -36,6 +36,7 @@ export default function LoginPage() {
     }
   };
 
+  
   return (
     <main className={styles.page}>
       <div className={styles.blurA} />
