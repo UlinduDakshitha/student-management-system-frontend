@@ -78,6 +78,7 @@ export default function DashboardPage() {
     }
   };
 
+  
   const deleteStudent = async (id) => {
     try {
       await API.delete(`/students/${id}`);
