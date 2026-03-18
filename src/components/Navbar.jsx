@@ -23,7 +23,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className={styles.actions}>
+      <nav className={styles.actions}>   
         <Link
           href="/dashboard"
           className={`${styles.navButton} ${pathname === "/dashboard" ? styles.active : ""}`}
