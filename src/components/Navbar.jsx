@@ -12,6 +12,7 @@ export default function Navbar() {
     localStorage.removeItem("token");
     router.push("/login");
   };
+  
 
   return (
     <header className={styles.header}>
