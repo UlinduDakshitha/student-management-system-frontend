@@ -13,6 +13,7 @@ export default function Navbar() {
     router.push("/login");
   };
 
+  
   return (
     <header className={styles.header}>
       <div className={styles.brandBlock}>
